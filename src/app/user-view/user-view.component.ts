@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -16,7 +17,7 @@ export class UserViewComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private usersService: UsersService
-  ) { }
+  ){ }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -25,8 +26,8 @@ export class UserViewComponent implements OnInit {
 
   getUser(id): void {
     this.usersService.getUser(id).subscribe(
-      (response:any) => {
-        this.user = response.users;
+      (response : any) => {
+        this.user = response.user
       }
     );
   }
