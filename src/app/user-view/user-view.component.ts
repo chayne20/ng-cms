@@ -25,8 +25,8 @@ export class UserViewComponent implements OnInit {
 
   getUser(id): void {
     this.usersService.getUser(id).subscribe(
-      (response) => {
-        this.user = response.user
+      (response:any) => {
+        this.user = response.users;
       }
     );
   }
